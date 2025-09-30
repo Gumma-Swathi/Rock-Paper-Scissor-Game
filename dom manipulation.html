@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="first">
+      <p>swathi 1</p>
+      <p>swathi 2</p>
+    </div>
+    <div id="second">
+      <p id="last">second 1</p>
+      <p id="fir">second 2</p>
+    </div>
+    <script>
+      let a = document.createElement("p");
+      a.innerHTML = "<h2>this is chaneged text</h2>";
+      let parent = document.getElementById("second");
+      parent.appendChild(a);
+      let last = document.getElementById("last");
+      parent.insertBefore(a, last);
+      parent.removeChild(fir);
+      last.replaceChildren();
+    </script>
+  </body>
+</html>

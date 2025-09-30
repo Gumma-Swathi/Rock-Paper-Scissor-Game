@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+      }
+      input,
+      button {
+        margin-top: 10px;
+      }
+      input:hover,
+      button:hover {
+        border-radius: 5px;
+        border: 1px solid red;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>
+        NAME :
+        <input
+          type="text"
+          name="text"
+          id="name"
+          placeholder="enter your name"
+          required
+      /></label>
+      <br>
+
+      <label>
+        ROLE :
+
+        <input
+          type="text"
+          name="text"
+          id="role"
+          placeholder="enter your role"
+          required
+      /></label>
+      <br />
+      <label>
+        LUCKY NUMBER :
+        <input
+          type="text"
+          name="text"
+          id="name"
+          placeholder="enter your lucky number with letters"
+          required /></label>
+          <br />
+      <button id="submit" type="submit">SUBMIT</button>
+    </form>
+    <div id="card">
+      <div id="name">
+        <div id="role">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function dislay(event) {
+
+        event.preventDefault();
+        document.getElementById("card").innerHTML=document.writeln(
+          document.getElementById("name").value
+        );
+        document.getElementById("name").innerHTML = document.writeln(
+          document.getElementById("role").value
+        );
+        document.getElementById("role").innerHTML = document.writeln(
+          document.getElementById("id").value
+        );
+      }
+      document.getElementById("submit").addEventListener("click", display);
+      
+    </script>
+  </body>
+</html>

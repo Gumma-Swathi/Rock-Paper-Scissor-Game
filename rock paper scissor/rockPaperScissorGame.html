@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #header{
+            width: 100%;
+            height:100px;
+            border: 1pxsolid black;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            }
+            #nav{
+                padding-top: 27px;
+            }
+            
+            
+    #emojis{
+        display: flex;
+        flex-wrap: wrap;
+justify-content: center;
+gap:5%;
+margin-top: 5rem; 
+    }
+   
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: fit;
+    }
+    .emoji:hover{
+       background-color:black;
+       
+       border-radius: 50%;
+        cursor: pointer;
+        
+    }
+    #score-board,#result{
+        text-align: center;
+        margin-top: 5%;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:5%;
+
+    }
+    #result{
+width:400px;
+height:50px;
+border-radius: 25px;
+margin-left: 40%;
+background-color: black;
+color:white;
+
+    }
+</style>
+</head>
+<body>
+    <header  id="header">
+        <nav id="nav">
+        ROCK PAPER SCISSORS
+        </nav>
+        </header>
+        <div id="emojis">
+   <div class="emoji" id="rock"><img   src="./rock.jpeg" alt="rock"></div>
+    <div class="emoji" id="paper"><img   src="./paper.png" alt="paper"></div>
+    <div class="emoji " id="scissor"><img   src="./scissors4.jpeg" alt="scissor"></div>
+    </div>
+    <div id="score-board">
+    <div class="score">
+     <p id="userScore">0</p>
+     <p>Your Score</p>
+     </div>
+     <div class="score">
+    <p id="compScore">0</p>
+    <p>Computer Score</p>
+    </div>
+    </div>
+    <div id="result">Play Your Game</div>
+    <script>
+
+
+        let yourScore=0;
+        let computerScore=0;
+        let emoji=document.querySelectorAll(".emoji");
+        const result=document.querySelector("#result");
+        let userScore=document.querySelector("#userScore");
+        let compScore=document.querySelector("#compScore");
+
+
+        
+        let computerMarks=()=>{
+            const options=["rock","paper","scissors"];
+            const randomNumber=Math.floor(Math.random()*3);
+            return options[randomNumber];
+        }
+
+        const drawGame=()=>{
+        result.innerHTML=`game draw.play again!🤗 your  ${yourChoice} is equals to  ${compChoice}"`;
+        result.style.backgroundColor="blue";
+        }
+
+
+        const showWinner=(userWin,yourChoice,compChoice)=>{
+        if(userWin){
+            yourScore++;
+            userScore.innerHTML=yourScore;
+           result.innerHTML=`you win🐼😎  your  ${yourChoice} beats ${compChoice}`;
+           result.style.backgroundColor="green";
+            }
+        else{
+            computerScore++;
+            compScore.innerHTML=computerScore;
+            result.innerHTML=`you lose😤🙂‍↕️  ${compChoice} beats your ${yourChoice}`;
+             result.style.backgroundColor="red";   
+            }
+        }
+
+    
+
+        let yourMarks=(yourChoice)=>{
+    console.log(`you are selected=${yourChoice}`);
+    //generate computer choice
+    const compChoice=computerMarks();
+    console.log(`computer selected = ${compChoice}`)
+
+    if(yourChoice===compChoice){
+        drawGame();
+    }
+    else{
+        let userWin=true;
+        if(yourChoice==="rock")
+        {
+        userWin= compChoice==="paper"?false:true;
+        
+        }
+        else if(yourChoice==="paper")
+        {
+            userWin= compChoice==="scissors"?false:true; 
+        }
+        else
+        {
+            userWin=compChoice==="rock"?false:true;
+
+        }
+        showWinner(userWin,compChoice,yourChoice);
+        }
+    }
+            
+ emoji.forEach(i=>{
+           i.addEventListener("click",()=>{
+                let yourChoice=i.getAttribute("id");
+                yourMarks(yourChoice);
+
+            
+                
+
+            })
+        })
+</script>
+</body>
+</html>

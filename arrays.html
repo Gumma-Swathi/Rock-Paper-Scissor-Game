@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let a=["apple","banana","cat","dog","elephant"];
+    let b=new Array("swathi","jothi","venkat","nana");
+    document.writeln(b.length,"<br>");
+    b.sort();
+    document.writeln(b,"<br>");
+    a.reverse();
+
+    let name="swathi";//reverse a sting in js
+    let reversed=name.split('').reverse()
+    .join('');
+document.writeln(reversed,"<br>");
+
+    document.write(a,"<br>");
+    document.writeln(a[4],"<br>");
+    document.writeln(b[2],"<br>");
+    document.writeln(b[3],"<br>");
+
+         for(let i of a){
+        document.writeln(i);
+    }
+
+    for(let i=0;i<=a.length;i++){
+        document.writeln(a[i],"<br>");
+    }
+
+    a.splice(3,0,"cabbage","curry");
+    document.writeln(a,"<br>")
+    a.splice(1,1);
+    document.writeln(a,"<br>")
+
+    let c={
+        "name":"swathi",
+        "age":12,
+        "rno":42
+    }
+    for(let i in c){
+        document.writeln(i,":");
+        document.writeln(c[i],"<br>");
+    }
+    document.writeln(Array.isArray(a),"<br>");
+
+    //map
+    let array1=[10,20,4,6,8,30,5,7,9];
+let array2=array1.map(i=>i*2);
+document.writeln(array2,"<br>");
+//filter
+let array3=[20,3,20,4,20,4,6,5,7];
+let array4=array3.filter(i=>i>10)
+document.write(array4,"<br>");
+//reduce
+let array5=[2,4,6,5,2,7,9,8]
+let array6=array5.reduce(function(acc,actual){
+    return acc+actual;
+},0);
+document.writeln(array6);
+
+
+
+
+</script>
+</body>
+</html>

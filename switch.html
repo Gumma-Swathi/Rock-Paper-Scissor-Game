@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter your marks :<input type="number" id="score"><br><br>
+    enter your max marks =<input type="number" id="max"><br><br>
+    <button onclick="validate()">submit</button>
+    <div id="result"></div>
+    <script>
+        function validate(){
+        
+        let marks=document.getElementById("score").value/document.getElementById("max").value*100;
+        switch(marks){
+            case (marks<=90 && marks>=80):
+                document.getElementById("result").innerHTML="excellent";
+                case (marks<=79 && marks>=60):
+                    document.getElementById("result").innerHTML=("distiction");
+                    case (marks<=59 && marks>=40):
+                        document.getElementById("result").innerHTML=("avg");
+                         default:
+                            document.getElementById("result").innerHTML=("fail");
+        }
+    }    </script>
+    
+</body>
+</html>

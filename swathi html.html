@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          * {
+            padding: 0px;
+          }
+          nav {
+            position: fixed;
+            top: 0px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            justify-items: center;
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 100%;
+            height: 50px;
+            background-color: brown;
+          }
+          nav a {
+            text-decoration: none;
+            color: black;
+          }
+          nav a:hover {
+            color: white;
+            text-decoration: underline;
+            border-radius: 5px;
+            border: 1px solid white;
+            padding: 5px;
+          }
+          .designer-button {
+            margin-top: 10px;
+            background-color: green;
+            border-radius: 10px;
+            border: 1px solid green;
+            padding: 2px;
+          }
+          a {
+            text-decoration: none;
+            color: white;
+          }
+
+          .box-1 {
+            margin-top: 100px;
+            width: 90%;
+            height: 250px;
+            background-color: rgb(235, 235, 219);
+            margin-left: 60px;
+            border-radius: 10px;
+            padding-left: 30px;
+          }
+
+          .box-2 {
+            width: 90%;
+            height: 200px;
+            margin-left: 60px;
+            border-radius: 10px;
+            padding-left: 30px;
+          }
+          h1 {
+            text-transform: capitalize;
+          }
+          #about,
+          p {
+            margin-top: 10px;
+            margin-left: 70px;
+          }
+          .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 90%;
+            height: 200px;
+            margin-top: 0px;
+            margin-left: 60px;
+            border-radius: 10px;
+            padding-left: 30px;
+          }
+          .item {
+            width: 200px;
+            height: 120px;
+            text-align: center;
+            background-color: beige;
+
+            border-radius: 5px;
+          }
+          .item::first-line {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+          }
+          h2 {
+            margin-left: 70px;
+          }
+          .portfolio-class {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 60px;
+          }
+          .class {
+            width: 300px;
+            height: 200px;
+            background-color: gray;
+          }
+          #blog {
+            margin-left: 70px;
+            background-color: beige;
+            border-radius: 10px;
+            padding-left: 10px;
+          }
+          #blog {
+            display: flex;
+            gap: 40%;
+          }
+          .item1 {
+            padding-left: 100px;
+          }
+          .item2 {
+            width: 300px;
+            height: 400px;
+            border: 1px solid white;
+            border-radius: 10px;
+          }
+          .item2 input,
+          .item2 textarea {
+            width: 80%;
+            padding: 5px;
+            margin-bottom: 5px;
+          }
+          .item2 input:hover,
+          .item2 textarea:hover {
+            border: 1px solid bisque;
+          }
+          footer {
+            text-align: center;
+            width: 100%;
+            height: 50px;
+            background-color: antiquewhite;
+            padding-top: 20px;
+          }
+        </style>
+      </head>
+      <body>
+        <header>
+          <nav>
+            <a href="#swathi">Swathi</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
+
+        <div class="box-1">
+          <button class="designer-button">
+            <a href="#">Designer & Developer</a>
+          </button>
+          <h1 id="swathi">welcome to my portfolio website</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro,
+            omnis commodi voluptatibus, expedita<br />
+            temporibus adipisci illo quaerat saepe Lorem, ipsum dolor sit amet
+            <br />consectetur adipisicing elit. Porro, omnis commodi
+            voluptatibus, expedita temporibus adipisci illo quaerat saepe
+          </p>
+          <button class="designer-button">
+            <a href="#portfolio">View Portfolio</a>
+          </button>
+        </div>
+
+        <h1 id="about">about me</h1>
+        <p>
+          I am Swathi — a front-end developer who loves creating simple and
+          beautiful interfaces. This project demonstrates core HTML & CSS
+          features from basic to advanced. I am Swathi — a front-end developer
+          who loves creating simple and beautiful interfaces. This project
+          demonstrates core HTML & CSS features from basic to advanced.
+        </p>
+
+        <div class="container">
+          <div>
+            <h5 class="item">
+              💻 <br />Web Design<br />
+              User-centered design, responsive layouts, Figma to code workflow.
+            </h5>
+          </div>
+          <div>
+            <h5 class="item" id="">
+              📝<br />
+              Web development<br />
+              HTML5, CSS3, Flexbox, Grid and modern CSS techniques for
+              production sites.
+            </h5>
+          </div>
+          <div>
+            <h5 class="item">
+              🌐<br />
+              SEO Optimization <br />Performance-first development and semantic
+              HTML for better search visibility.
+            </h5>
+          </div>
+        </div>
+
+        <h2 id="portfolio">Portfolio</h2>
+        <marquee behavior="scroll" scaroll-amount="100%"
+          ><div class="portfolio-class">
+            <div class="class"></div>
+            <div class="class"></div>
+            <div class="class"></div>
+          </div>
+        </marquee>
+        <div id="blog">
+          <div class="item1">
+            <h1>Blog</h1>
+            <p>Latest articles, case studies and design notes.</p>
+            <p>JULY 2022</p>
+            <h1>Designing for Performance</h1>
+            <p>Tips and techniques to improve page load and UX.</p>
+            <p>MAY 2022</p>
+            <h1>Responsive Grid Patterns</h1>
+            <p>How to build flexible grid-based layouts with CSS Grid.</p>
+            <p>MAR 2022</p>
+            <h1>CSS Animations that Delight</h1>
+            <p>Use subtle motion to guide the user's attention.</p>
+          </div>
+          <div class="item2">
+            <h1>Contact</h1>
+            <p>Want to work together? send a message</p>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Email" />
+            <textarea rows="10" cols="20">feedback here.....</textarea>
+            <button class="designer-button">
+              <a href="#portfolio">Send Message</a>
+            </button>
+          </div>
+        </div>
+        <footer id="contact">&copy;Swathi — Built with HTML & CSS</footer>
+      </body>
+    </html>
+  </body>
+</html>

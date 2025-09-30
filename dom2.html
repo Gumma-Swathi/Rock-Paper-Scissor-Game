@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="body" >
+      <p> HAI GUYS WELCOME TO THE SESSION</p>
+    </div> -->
+    <script>
+     let body=document.querySelector("body");
+        // let h1=document.createElement("h1");
+        // h1.innerHTML="i am div1";
+        // body.appendChild(h1);
+    
+
+
+        let btn=document.createElement("button");
+        btn.setAttribute("id","butt");
+        btn.innerText="click me";
+        btn.style.backgroundColor="red";
+        btn.style.color="white"
+    body.appendChild(btn);
+
+   
+    
+    let p=document.createElement("p");
+    p.setAttribute("class","pclass");
+    p.innerHTML="i am p element";
+    p.style.color="white";
+    p.style.backgroundColor="blue";
+body.prepend(p); 
+
+      
+    
+    </script>
+    
+</body>
+</html>

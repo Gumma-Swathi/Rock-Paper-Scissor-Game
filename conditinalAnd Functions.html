@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    enter your name: <input type="text" id="name"><br><br>
+    enter your emiail: <input type="email" name="email" id="email"><br><br>
+    <button type="button" onclick="validation()">verify</button>
+
+<div id="result"></div>
+<script>
+    function validation()
+    {
+    if(document.getElementById("name").value=="swathi" && document.getElementById("email").value=="swathiyadav@gmail.com"){
+    document.getElementById("result").innerHTML="login successful";
+    }
+    else {
+        document.getElementById("result").innerHTML="name or email not matched";
+    }
+}
+</script>   
+</body>
+</html>

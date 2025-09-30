@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height:100px;
+            width:100px;
+            border: 1px solid #3fd61e;
+
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" name=" naku kavalii ">first div</div>
+
+    <!-- <div class="box">second div</div>
+
+    <div class="box">third div</div> -->
+
+
+   <script>
+      
+//     let divs=document.querySelectorAll(".box");
+//     divs[0].innerHTML=divs[0].innerHTML+" new content 1";
+//      divs[1].innerHTML=divs[1].innerHTML+" new content 2";
+//       divs[2].innerHTML=divs[2].innerHTML+" new content 3";
+
+//    //2nd way is 
+//    let idx=1;
+//    for(i of divs){
+//     i.innerHTML=i.innerHTML+`new div ${idx}`;
+//     idx++; 
+//    }
+   let box=document.querySelector("div");
+   let clas=box.getAttribute("class");
+   document.writeln(clas);
+   let name=box.getAttribute("name");
+   document.writeln(name);
+   let set=box.setAttribute("id","22alla0542");
+   box.style.color="blue";
+   box.style.fontSize="30px"
+   
+       
+    </script> 
+</body>
+</html>

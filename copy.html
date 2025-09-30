@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Swathi — Portfolio</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #f7f8fb;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --text: #0f172a;
+        --accent: #2bb673;
+        --accent-dark: #218a53;
+        --shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+        --glass: rgba(255, 255, 255, 0.6);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* ====== Header / Nav ====== */
+      header {
+        background: var(--card);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--text);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 600;
+        padding: 8px 10px;
+        border-radius: 8px;
+        transition: all 0.22s ease;
+        position: relative;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        height: 3px;
+        width: 0;
+        background: var(--accent);
+        transition: width 0.25s ease;
+      }
+      nav a:hover {
+        color: var(--accent-dark);
+        transform: translateY(-2px);
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* ====== Hero ====== */
+      .hero {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        padding: 64px 20px;
+        background: linear-gradient(
+          180deg,
+          rgba(43, 182, 115, 0.05),
+          transparent 50%
+        );
+      }
+      .hero-left {
+        flex: 1;
+        max-width: 640px;
+      }
+      .eyebrow {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+        margin: 0 0 18px;
+        line-height: 1.05;
+      }
+      .hero p {
+        color: var(--muted);
+        margin: 0 0 20px;
+      }
+      .cta {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 8px 18px rgba(34, 139, 86, 0.12);
+        transition: transform 0.18s ease;
+      }
+      .cta:hover {
+        transform: translateY(-4px);
+      }
+
+      /* hero visual */
+      .hero-right {
+        flex: 0 0 360px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .illustration {
+        width: 320px;
+        height: 220px;
+        border-radius: 18px;
+        background: #e9f6ef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow);
+      }
+
+      /* ====== About / Services ====== */
+      section {
+        padding: 48px 20px;
+      }
+      .section-head {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .section-head h2 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+      }
+      .section-head p {
+        color: var(--muted);
+        margin-bottom: 22px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .service {
+        background: var(--card);
+        padding: 22px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+      .service:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+      }
+      .service .icon {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 12px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #e8faf0, #dff6ea);
+        display: grid;
+        place-items: center;
+      }
+      .service h3 {
+        margin: 0 0 8px;
+        font-size: 1.02rem;
+      }
+      .service p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* ====== Portfolio Grid ====== */
+      .portfolio {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .proj {
+        background: linear-gradient(#fff, #fcfcfc);
+        border-radius: 12px;
+        padding: 36px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        box-shadow: var(--shadow);
+      }
+
+      /* ====== Two-column lower section: Blog + Contact ====== */
+      .lower {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 28px;
+        margin-top: 30px;
+      }
+
+      /* Blog list */
+      .blog-item {
+        background: transparent;
+        padding: 12px 0;
+        border-bottom: 1px dashed rgba(15, 23, 42, 0.04);
+      }
+      .blog-item h4 {
+        margin: 0 0 6px;
+        font-size: 1.05rem;
+      }
+      .blog-item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* Contact card */
+      .contact-card {
+        background: var(--card);
+        padding: 22px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+      .field {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+      }
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #e6ece6;
+        background: #fbfdfb;
+        resize: vertical;
+      }
+      .send {
+        display: inline-block;
+        background: var(--accent-dark);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 8px;
+        border: none;
+        font-weight: 700;
+        margin-top: 8px;
+        cursor: pointer;
+      }
+
+      /* ====== Footer ====== */
+      footer {
+        padding: 32px 20px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* ====== Small screens ====== */
+      @media (max-width: 900px) {
+        .services {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .portfolio {
+          grid-template-columns: 1fr;
+        }
+        .lower {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          flex-direction: column;
+          gap: 22px;
+          padding: 40px 20px;
+        }
+        .hero-right {
+          flex-basis: auto;
+        }
+        nav ul {
+          gap: 10px;
+        }
+      }
+      @media (max-width: 520px) {
+        .services {
+          grid-template-columns: 1fr;
+        }
+        .brand {
+          font-size: 1rem;
+        }
+        .hero h1 {
+          font-size: 1.6rem;
+        }
+        .cta {
+          padding: 10px 14px;
+        }
+        .illustration {
+          width: 280px;
+          height: 180px;
+        }
+      }
+
+      /* subtle entry animations */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: fadeUp 0.7s forwards;
+      }
+      .fade-up.delay-1 {
+        animation-delay: 0.15s;
+      }
+      .fade-up.delay-2 {
+        animation-delay: 0.3s;
+      }
+      .fade-up.delay-3 {
+        animation-delay: 0.45s;
+      }
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header / Nav -->
+    <header>
+      <div class="container nav">
+        <div class="brand">Swathi</div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero container" aria-label="Hero">
+        <div class="hero-left fade-up">
+          <span class="eyebrow">Designer & Developer</span>
+          <h1>Welcome to My Portfolio Website</h1>
+          <p>
+            I build modern, responsive websites and web applications focused on
+            performance, accessibility and clean design.
+          </p>
+          <a class="cta" href="#portfolio">View Portfolio</a>
+        </div>
+
+        <div class="hero-right fade-up delay-1" aria-hidden="true">
+          <div class="illustration">
+            <!-- Simple inline SVG illustration placeholder -->
+            <svg
+              width="220"
+              height="140"
+              viewBox="0 0 220 140"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect
+                x="0"
+                y="0"
+                width="220"
+                height="140"
+                rx="12"
+                fill="#e9f6ef"
+              />
+              <g transform="translate(30,20)">
+                <circle cx="52" cy="36" r="30" fill="#ffffff" />
+                <rect
+                  x="12"
+                  y="70"
+                  width="120"
+                  height="10"
+                  rx="4"
+                  fill="#d7f0de"
+                />
+                <rect
+                  x="0"
+                  y="88"
+                  width="160"
+                  height="16"
+                  rx="8"
+                  fill="#d7f0de"
+                />
+                <path
+                  d="M8 44c12 0 22-8 28-8s14 8 28 8"
+                  stroke="#c6efd9"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT + SERVICES -->
+      <section id="about">
+        <div class="container section-head">
+          <h2>About Me</h2>
+          <p>
+            I am Swathi — a front-end developer who loves creating simple and
+            beautiful interfaces. This project demonstrates core HTML & CSS
+            features from basic to advanced.
+          </p>
+        </div>
+
+        <div class="container services fade-up delay-2" aria-hidden="false">
+          <div class="service">
+            <div class="icon">
+              <!-- icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="12"
+                  rx="2"
+                  stroke="#1b9a66"
+                  stroke-width="2"
+                />
+                <path
+                  d="M7 9h10"
+                  stroke="#1b9a66"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Web Design</h3>
+            <p>
+              User-centered design, responsive layouts, Figma to code workflow.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 7h18M7 21V7"
+                  stroke="#1b9a66"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>
+              HTML5, CSS3, Flexbox, Grid and modern CSS techniques for
+              production sites.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3v18M3 12h18"
+                  stroke="#1b9a66"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>SEO Optimization</h3>
+            <p>
+              Performance-first development and semantic HTML for better search
+              visibility.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="container">
+        <div class="section-head">
+          <h2>Portfolio</h2>
+          <p>Selected projects — responsive, accessible and polished.</p>
+        </div>
+
+        <div class="portfolio fade-up delay-3" aria-hidden="false">
+          <div class="proj">Project image / case study 1</div>
+          <div class="proj">Project image / case study 2</div>
+        </div>
+      </section>
+
+      <!-- BLOG + CONTACT -->
+      <section class="container">
+        <div class="lower">
+          <!-- Blog column -->
+          <div>
+            <div id="blog" class="section-head">
+              <h2>Blog</h2>
+              <p>Latest articles, case studies and design notes.</p>
+            </div>
+            <div>
+              <div class="blog-item">
+                <small style="color: var(--muted); font-weight: 600"
+                  >JULY 2022</small
+                >
+                <h4>Designing for Performance</h4>
+                <p>Tips and techniques to improve page load and UX.</p>
+              </div>
+              <div class="blog-item">
+                <small style="color: var(--muted); font-weight: 600"
+                  >MAY 2022</small
+                >
+                <h4>Responsive Grid Patterns</h4>
+                <p>How to build flexible grid-based layouts with CSS Grid.</p>
+              </div>
+              <div class="blog-item">
+                <small style="color: var(--muted); font-weight: 600"
+                  >MAR 2022</small
+                >
+                <h4>CSS Animations that Delight</h4>
+                <p>Use subtle motion to guide the user's attention.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact column -->
+          <aside
+            id="contact"
+            class="contact-card"
+            aria-labelledby="contactHeading"
+          >
+            <h3 id="contactHeading">Contact</h3>
+            <p style="color: var(--muted); margin-top: 6px">
+              Want to work together? Send a message.
+            </p>
+
+            <form
+              onsubmit="event.preventDefault(); alert('Form submission simulated — try in your app!');"
+              style="margin-top: 14px"
+            >
+              <label class="field" for="name">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  required
+                />
+              </label>
+
+              <label class="field" for="email">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+
+              <label class="field" for="message">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </label>
+
+              <button class="send" type="submit">Send Message</button>
+            </form>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small
+          >&copy; <span id="year"></span> Swathi — Built with HTML & CSS</small
+        >
+      </div>
+    </footer>
+
+    <script>
+      // small helper: set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // optional: small reveal on scroll (vanilla)
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              e.target.classList.remove("fade-up");
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".fade-up").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
